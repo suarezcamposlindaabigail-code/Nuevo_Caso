@@ -1,0 +1,29 @@
+# =============================================================================
+# LogiFast — Datos instancia TS5
+# Curso II-1122 | UCR Alajuela
+# =============================================================================
+
+param I := 5;   # camiones de entrada
+param O := 3;   # camiones de salida
+param N := 8;   # tipos de producto
+
+param V     := 1;       # minutos por unidad transferida
+param BigM  := 100000;
+
+# r[i][k] = unidades del producto k en el camión de entrada i
+param r :
+#       k=1   k=2   k=3   k=4   k=5   k=6   k=7   k=8
+        1     2     3     4     5     6     7     8  :=
+  1   170     0     0     0     0     0     0     0
+  2     6     6    19    50    38     6    19    56
+  3    49    31    60     0     0    12    37    31
+  4     0     0     0     0   143     0    47     0
+  5     0     0     0    58    36     0    72    14 ;
+
+# s[j][k] = demanda del producto k en el camión de salida j
+param s :
+#       k=1   k=2   k=3   k=4   k=5   k=6   k=7   k=8
+        1     2     3     4     5     6     7     8  :=
+  1    75    12    59     0     0     9    98    40
+  2   150     0     0     0   217     0     0     0
+  3     0    25    20   108     0     9    77    61 ;
